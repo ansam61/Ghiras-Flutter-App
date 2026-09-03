@@ -15,7 +15,7 @@ class PlantProvider extends ChangeNotifier {
   String? _workingEndpoint;
 
   List<Plant> _plants = [];
-  final Set<int> _favoritePlantIds = {1, 2};
+  final Set<int> _favoritePlantIds = {};
   bool _isLoading = false;
   bool _isLiveApiConnected = false;
   String _searchQuery = '';
@@ -50,64 +50,7 @@ class PlantProvider extends ChangeNotifier {
   }
 
   void _loadInitialData() {
-    _plants = [
-      Plant(
-        plantId: 1,
-        plantName: 'البوتس الذهبي',
-        scientificName: 'Epipremnum aureum',
-        categoryId: 1,
-        categoryName: 'نباتات داخلية',
-        wateringIntervalDays: 3,
-        sunlightRequirement: 'إضاءة متوسطة غير مباشرة',
-        humidityRequirement: '60% رطوبة معتدلة',
-        imageUrl: 'https://images.unsplash.com/photo-1597055181300-e3633a917c9c',
-        description: 'نبات زينة داخلي رائع يمتص السموم وينقي هواء الغرفة بسهولة.',
-        careAdvice: 'امسح الأوراق بقطعة قماش مبللة مرتين شهرياً لتنقية الهواء، وتجنب بقاء الماء ركوداً في الصحن الملحق.',
-        lastWateredDate: DateTime.now().subtract(const Duration(days: 1)),
-      ),
-      Plant(
-        plantId: 2,
-        plantName: 'جلد النمر (سانسيفيريا)',
-        scientificName: 'Sansevieria trifasciata',
-        categoryId: 1,
-        categoryName: 'نباتات داخلية',
-        wateringIntervalDays: 14,
-        sunlightRequirement: 'تحمل الإضاءة المنخفضة والعالية',
-        humidityRequirement: 'رطوبة منخفضة (40%)',
-        imageUrl: 'https://images.unsplash.com/photo-1599598425947-03064377754d',
-        description: 'نبات قوي جداً ومقاوم للجفاف ينتج الأكسجين ليلاً بشكل ممتاز.',
-        careAdvice: 'اروهِ فقط عند جفاف التربة تماماً (كل 14 يوم)، وتجنب صب الماء في قلب أوراق النبتة لمنع التعفن.',
-        lastWateredDate: DateTime.now().subtract(const Duration(days: 4)),
-      ),
-      Plant(
-        plantId: 3,
-        plantName: 'صبار الألوفيرا الطبي',
-        scientificName: 'Aloe vera',
-        categoryId: 3,
-        categoryName: 'عصاريات وصبار',
-        wateringIntervalDays: 10,
-        sunlightRequirement: 'شمس مباشرة وساطعة',
-        humidityRequirement: 'رطوبة جافة وجيدة التهوية',
-        imageUrl: 'https://images.unsplash.com/photo-1596547609652-9cf5d8d76921',
-        description: 'نبات عصاري طبي مفيد لترطيب البشرة وعلاج الحروق البسيطة.',
-        careAdvice: 'ضعه في مكان مشمس جيد التهوية، واستخدم تربة مخصصة للصبار عالية التصريف للماء.',
-        lastWateredDate: DateTime.now().subtract(const Duration(days: 2)),
-      ),
-      Plant(
-        plantId: 4,
-        plantName: 'مونستيرا داليشيوسا',
-        scientificName: 'Monstera deliciosa',
-        categoryId: 1,
-        categoryName: 'نباتات داخلية',
-        wateringIntervalDays: 7,
-        sunlightRequirement: 'إضاءة ساطعة غير مباشرة',
-        humidityRequirement: 'رطوبة عالية (70%)',
-        imageUrl: 'https://images.unsplash.com/photo-1614594975525-e45190c55d0b',
-        description: 'نبات القفص الصدري ذو الأوراق المفرغة الجذابة للمنازل الحديثة.',
-        careAdvice: 'رش الأوراق برذاذ خفيف من الماء أسبوعياً لرفع الرطوبة، وزودها بدعامة خشبية لدعم تسلق الأوراق.',
-        lastWateredDate: DateTime.now().subtract(const Duration(days: 5)),
-      ),
-    ];
+    _plants = [];
     fetchPlants();
   }
 
@@ -122,7 +65,7 @@ class PlantProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  // READ: Fetch Plants from REST API with Fallback & Dynamic Host Detection
+  // READ: Fetch Plants from REST API & SQL Server Database
   Future<void> fetchPlants() async {
     _isLoading = true;
     notifyListeners();
@@ -135,12 +78,10 @@ class PlantProvider extends ChangeNotifier {
 
         if (response.statusCode == 200) {
           final List<dynamic> data = jsonDecode(response.body);
-          if (data.isNotEmpty) {
-            _plants = data.map((json) => Plant.fromJson(json)).toList();
-            _isLiveApiConnected = true;
-            _workingEndpoint = url;
-            break;
-          }
+          _plants = data.map((json) => Plant.fromJson(json)).toList();
+          _isLiveApiConnected = true;
+          _workingEndpoint = url;
+          break;
         }
       } catch (_) {
         continue;

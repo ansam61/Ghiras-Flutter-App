@@ -192,13 +192,60 @@ class _MyPlantsTabState extends State<MyPlantsTab> {
                     Expanded(
                       child: plantProvider.filteredPlants.isEmpty
                           ? Center(
-                              child: Text(
-                                settings.getText(
-                                  'لا توجد نباتات مطابقة للبحث حالياً',
-                                  'No matching plants found',
-                                ),
-                                style: const TextStyle(
-                                    color: AppTheme.textMuted, fontSize: 14),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(16),
+                                    decoration: const BoxDecoration(
+                                      color: AppTheme.mintSoft,
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: const Icon(
+                                      Icons.local_florist_rounded,
+                                      color: AppTheme.primaryGreen,
+                                      size: 38,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 14),
+                                  Text(
+                                    settings.getText(
+                                      'حديقتك فارغة، أضف نبتتك الأولى الآن',
+                                      'Your garden is empty, add your first plant',
+                                    ),
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 4),
+                                  Text(
+                                    settings.getText(
+                                      'اختر الاسم والتصنيف وسيتم الحفظ في قاعدة البيانات فوراً.',
+                                      'Choose name and category to save directly to the database.',
+                                    ),
+                                    style: const TextStyle(
+                                      color: AppTheme.textMuted,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  ElevatedButton.icon(
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (_) => const AddPlantScreen(),
+                                        ),
+                                      );
+                                    },
+                                    icon: const Icon(Icons.add_rounded, size: 20),
+                                    label: Text(
+                                      settings.getText(
+                                          'إضافة نبتة جديدة', 'Add New Plant'),
+                                    ),
+                                  ),
+                                ],
                               ),
                             )
                           : GridView.builder(

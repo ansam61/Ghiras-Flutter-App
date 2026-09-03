@@ -6,6 +6,7 @@ import '../../providers/app_settings_provider.dart';
 import '../../providers/plant_provider.dart';
 import '../ai_scan/ai_scanner_screen.dart';
 import '../plant_details/plant_details_screen.dart';
+import '../add_plant/add_plant_screen.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -20,20 +21,20 @@ class _HomeTabState extends State<HomeTab> {
 
   final List<Map<String, String>> _quotes = [
     {
-      'ar': '🌿 "النباتات تمنح بيتك روحاً ونقاءً، اعتنِ بها لتزهر حياتك."',
-      'en': '🌿 "Plants bring life and purity to your home, care for them to bloom your life."'
+      'ar': 'النباتات تمنح بيتك روحاً ونقاءً، اعتنِ بها لتزهر حياتك.',
+      'en': 'Plants bring life and purity to your home, care for them to bloom your life.'
     },
     {
-      'ar': '💧 "الري المنتظم في الصباح الباكر يمنح الجذور امتصاصاً مثالياً للغذاء."',
-      'en': '💧 "Regular early morning watering gives roots optimal nutrient absorption."'
+      'ar': 'الري المنتظم في الصباح الباكر يمنح الجذور امتصاصاً مثالياً للغذاء.',
+      'en': 'Regular early morning watering gives roots optimal nutrient absorption.'
     },
     {
-      'ar': '☀️ "الضوء غير المباشر يمنع احتراق أوراق النباتات الداخلية المزهرة."',
-      'en': '☀️ "Indirect sunlight prevents leaf burn on flowering houseplants."'
+      'ar': 'الضوء غير المباشر يمنع احتراق أوراق النباتات الداخلية المزهرة.',
+      'en': 'Indirect sunlight prevents leaf burn on flowering houseplants.'
     },
     {
-      'ar': '💚 "غراس: شريكك اليومي لرعاية خضراء مستدامة وبشرية فائقة."',
-      'en': '💚 "Ghiras: Your daily partner for sustainable green care."'
+      'ar': 'غراس: شريكك اليومي لرعاية خضراء مستدامة وبشرية فائقة.',
+      'en': 'Ghiras: Your daily partner for sustainable green care.'
     },
   ];
 
@@ -70,7 +71,7 @@ class _HomeTabState extends State<HomeTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Top Header with Theme (Light/Dark) & Language (Ar/En) Controls
+              // Top Header with Theme & Language Controls
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -93,7 +94,7 @@ class _HomeTabState extends State<HomeTab> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            settings.getText('مرحباً بك 👋', 'Welcome 👋'),
+                            settings.getText('مرحباً بك', 'Welcome'),
                             style: const TextStyle(
                               color: AppTheme.textMuted,
                               fontSize: 13,
@@ -112,7 +113,6 @@ class _HomeTabState extends State<HomeTab> {
                   ),
                   Row(
                     children: [
-                      // Language Toggle (Ar/En)
                       IconButton(
                         tooltip: 'تغيير اللغة Language',
                         icon: Container(
@@ -134,7 +134,6 @@ class _HomeTabState extends State<HomeTab> {
                           settings.toggleLanguage();
                         },
                       ),
-                      // Theme Toggle (Light/Dark ☀️/🌙)
                       IconButton(
                         tooltip: 'تغيير المظهر (نهري/ليلي)',
                         icon: Icon(
@@ -191,7 +190,7 @@ class _HomeTabState extends State<HomeTab> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Text(
-                          '10s ⏱️',
+                          '10s',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 10,
@@ -282,26 +281,106 @@ class _HomeTabState extends State<HomeTab> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      settings.getText('عرض الكل', 'View All'),
-                      style: const TextStyle(
-                        color: AppTheme.primaryGreen,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  IconButton(
+                    icon: const Icon(Icons.add_circle_outline_rounded,
+                        color: AppTheme.primaryGreen, size: 26),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const AddPlantScreen()),
+                      );
+                    },
                   ),
                 ],
               ),
               const SizedBox(height: 14),
 
-              // Plants List from Provider
+              // Plants List or Empty State Card
               Consumer<PlantProvider>(
                 builder: (context, provider, child) {
                   final plants = provider.plants;
+
+                  if (plants.isEmpty) {
+                    return Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(24),
+                      decoration: BoxDecoration(
+                        color: settings.isDarkMode ? AppTheme.darkCard : Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: AppTheme.sleekShadow,
+                        border: Border.all(
+                          color: const Color(0xFFE2E8F0).withValues(alpha: 0.5),
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: const BoxDecoration(
+                              color: AppTheme.mintSoft,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              Icons.eco_rounded,
+                              color: AppTheme.primaryGreen,
+                              size: 40,
+                            ),
+                          ),
+                          const SizedBox(height: 16),
+                          Text(
+                            settings.getText(
+                              'حديقتك فارغة حالياً',
+                              'Your garden is currently empty',
+                            ),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            settings.getText(
+                              'أضف نبتتك الأولى واختر تصنيفها ليتم ترحيلها وحفظها مباشرة في قاعدة البيانات.',
+                              'Add your first plant and select its category to save it directly into the database.',
+                            ),
+                            style: const TextStyle(
+                              color: AppTheme.textMuted,
+                              fontSize: 12,
+                              height: 1.5,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 18),
+                          ElevatedButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => const AddPlantScreen(),
+                                ),
+                              );
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppTheme.primaryGreen,
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 12),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(14),
+                              ),
+                            ),
+                            icon: const Icon(Icons.add_rounded, size: 20),
+                            label: Text(
+                              settings.getText(
+                                  'إضافة نبتتك الأولى الآن', 'Add Your First Plant'),
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+
                   return SizedBox(
-                    height: 210,
+                    height: 185,
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: plants.length,
@@ -317,12 +396,12 @@ class _HomeTabState extends State<HomeTab> {
                             );
                           },
                           child: Container(
-                            width: 160,
-                            margin: const EdgeInsets.only(left: 16),
-                            padding: const EdgeInsets.all(14),
+                            width: 145,
+                            margin: const EdgeInsets.only(left: 14),
+                            padding: const EdgeInsets.all(12),
                             decoration: BoxDecoration(
                               color: settings.isDarkMode ? AppTheme.darkCard : Colors.white,
-                              borderRadius: BorderRadius.circular(20),
+                              borderRadius: BorderRadius.circular(18),
                               boxShadow: AppTheme.sleekShadow,
                               border: Border.all(
                                 color: const Color(0xFFE2E8F0).withValues(alpha: 0.5),
@@ -332,16 +411,16 @@ class _HomeTabState extends State<HomeTab> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  height: 90,
+                                  height: 80,
                                   decoration: BoxDecoration(
                                     color: AppTheme.mintSoft,
-                                    borderRadius: BorderRadius.circular(14),
+                                    borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: const Center(
                                     child: Icon(
                                       Icons.eco_rounded,
                                       color: AppTheme.primaryGreen,
-                                      size: 48,
+                                      size: 40,
                                     ),
                                   ),
                                 ),
@@ -350,7 +429,7 @@ class _HomeTabState extends State<HomeTab> {
                                   plant.name,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 14,
+                                    fontSize: 13,
                                   ),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
