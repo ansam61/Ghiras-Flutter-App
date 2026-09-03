@@ -5,19 +5,26 @@ import '../models/plant_category.dart';
 import '../models/ai_diagnosis.dart';
 
 class ApiService {
-  // Base URLs for Windows Localhost, Android Emulator, and Web API
-  static const String baseUrl = 'https://localhost:7267/api';
+  // Dynamic Host Base URLs for Windows Desktop, Chrome & Android Emulator
+  static final List<String> baseUrls = [
+    'http://localhost:5250/api',
+    'http://10.0.2.2:5250/api',
+    'https://localhost:7267/api',
+    'https://10.0.2.2:7267/api',
+  ];
 
   static Future<List<Plant>> getPlants() async {
-    try {
-      final response = await http
-          .get(Uri.parse('$baseUrl/Plants'))
-          .timeout(const Duration(seconds: 4));
-      if (response.statusCode == 200) {
-        final List jsonList = json.decode(response.body);
-        return jsonList.map((e) => Plant.fromJson(e)).toList();
-      }
-    } catch (_) {}
+    for (final base in baseUrls) {
+      try {
+        final response = await http
+            .get(Uri.parse('$base/Plants'))
+            .timeout(const Duration(seconds: 3));
+        if (response.statusCode == 200) {
+          final List jsonList = json.decode(response.body);
+          return jsonList.map((e) => Plant.fromJson(e)).toList();
+        }
+      } catch (_) {}
+    }
 
     // Fallback Mock Data matching Adobe XD designs
     return [
@@ -50,15 +57,17 @@ class ApiService {
   }
 
   static Future<List<PlantCategory>> getCategories() async {
-    try {
-      final response = await http
-          .get(Uri.parse('$baseUrl/PlantCategory'))
-          .timeout(const Duration(seconds: 4));
-      if (response.statusCode == 200) {
-        final List jsonList = json.decode(response.body);
-        return jsonList.map((e) => PlantCategory.fromJson(e)).toList();
-      }
-    } catch (_) {}
+    for (final base in baseUrls) {
+      try {
+        final response = await http
+            .get(Uri.parse('$base/PlantCategory'))
+            .timeout(const Duration(seconds: 3));
+        if (response.statusCode == 200) {
+          final List jsonList = json.decode(response.body);
+          return jsonList.map((e) => PlantCategory.fromJson(e)).toList();
+        }
+      } catch (_) {}
+    }
 
     return [
       PlantCategory(
@@ -95,15 +104,17 @@ class ApiService {
   }
 
   static Future<List<AIDiagnosis>> getDiagnoses() async {
-    try {
-      final response = await http
-          .get(Uri.parse('$baseUrl/AIDiagnosis'))
-          .timeout(const Duration(seconds: 4));
-      if (response.statusCode == 200) {
-        final List jsonList = json.decode(response.body);
-        return jsonList.map((e) => AIDiagnosis.fromJson(e)).toList();
-      }
-    } catch (_) {}
+    for (final base in baseUrls) {
+      try {
+        final response = await http
+            .get(Uri.parse('$base/AIDiagnosis'))
+            .timeout(const Duration(seconds: 3));
+        if (response.statusCode == 200) {
+          final List jsonList = json.decode(response.body);
+          return jsonList.map((e) => AIDiagnosis.fromJson(e)).toList();
+        }
+      } catch (_) {}
+    }
 
     return [
       AIDiagnosis(
