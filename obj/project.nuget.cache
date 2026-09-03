@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "Zf0+6HbEVqI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\Ghiras.Mobile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\مثىخرخخ\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.11\\microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "C:\\Users\\مثىخرخخ\\.nuget\\packages\\microsoft.openapi\\3.10.2\\microsoft.openapi.3.10.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "message": "Detected package version outside of dependency constraint: Microsoft.AspNetCore.OpenApi 10.0.11 requires Microsoft.OpenApi (>= 2.7.5 && < 3.0.0) but version Microsoft.OpenApi 3.10.2 was resolved.",
+      "projectPath": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\Ghiras.Mobile.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\Ghiras.Mobile.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

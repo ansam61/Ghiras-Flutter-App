@@ -1,0 +1,11 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "cmd",
+      "name": "تشغيل تطبيق غراس الفلاتر (Run Flutter App)",
+      "project": "RunFlutterApp.bat"
+    }
+  ]
+}

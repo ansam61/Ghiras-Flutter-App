@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A89E62C4-82D1-4D90-9366-88775B891A9A}|Ghiras.Mobile.csproj|c:\\users\\ns_.4m\\documents\\ghirasproject\\ghiras_app\\lib\\models\\plant.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A89E62C4-82D1-4D90-9366-88775B891A9A}|Ghiras.Mobile.csproj|solutionrelative:lib\\models\\plant.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A89E62C4-82D1-4D90-9366-88775B891A9A}|Ghiras.Mobile.csproj|c:\\users\\ns_.4m\\documents\\ghirasproject\\ghiras_app\\lib\\models\\plant_category.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A89E62C4-82D1-4D90-9366-88775B891A9A}|Ghiras.Mobile.csproj|solutionrelative:lib\\models\\plant_category.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "plant.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant.dart",
+              "RelativeDocumentMoniker": "lib\\models\\plant.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant.dart",
+              "RelativeToolTip": "lib\\models\\plant.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T17:32:03.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "plant_category.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant_category.dart",
+              "RelativeDocumentMoniker": "lib\\models\\plant_category.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant_category.dart",
+              "RelativeToolTip": "lib\\models\\plant_category.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T17:31:58.976Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\auth\\login_screen.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\screens\\auth\\login_screen.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\add_plant\\add_plant_screen.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\screens\\add_plant\\add_plant_screen.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\RunFlutterApp.bat||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RunFlutterApp.bat||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant_category.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\models\\plant_category.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\ai_diagnosis.dart||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:lib\\models\\ai_diagnosis.dart||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "login_screen.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\auth\\login_screen.dart",
+              "RelativeDocumentMoniker": "lib\\screens\\auth\\login_screen.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\auth\\login_screen.dart",
+              "RelativeToolTip": "lib\\screens\\auth\\login_screen.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T16:41:01.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "plant_category.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant_category.dart",
+              "RelativeDocumentMoniker": "lib\\models\\plant_category.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\plant_category.dart",
+              "RelativeToolTip": "lib\\models\\plant_category.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T16:22:16.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RunFlutterApp.bat",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\RunFlutterApp.bat",
+              "RelativeDocumentMoniker": "RunFlutterApp.bat",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\RunFlutterApp.bat",
+              "RelativeToolTip": "RunFlutterApp.bat",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000614|",
+              "WhenOpened": "2026-09-01T16:20:52.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "add_plant_screen.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\add_plant\\add_plant_screen.dart",
+              "RelativeDocumentMoniker": "lib\\screens\\add_plant\\add_plant_screen.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\screens\\add_plant\\add_plant_screen.dart",
+              "RelativeToolTip": "lib\\screens\\add_plant\\add_plant_screen.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T16:20:34.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ai_diagnosis.dart",
+              "DocumentMoniker": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\ai_diagnosis.dart",
+              "RelativeDocumentMoniker": "lib\\models\\ai_diagnosis.dart",
+              "ToolTip": "C:\\Users\\ns_.4m\\Documents\\GhirasProject\\ghiras_app\\lib\\models\\ai_diagnosis.dart",
+              "RelativeToolTip": "lib\\models\\ai_diagnosis.dart",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-01T16:20:23.699Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
