@@ -3,6 +3,13 @@ description: Ghiras AI Plant Care and Diagnosis Mobile Application
 publish_to: 'none'
 version: 1.0.0+1
 
+# ========================================================
+# Ghiras .NET 10 Web API Backend Configuration
+# Primary Web/Desktop Endpoint: http://localhost:5250/api
+# Android Emulator Endpoint: http://10.0.2.2:5250/api
+# Secure HTTPS Endpoint: https://localhost:7267/api
+# ========================================================
+
 environment:
   sdk: '>=3.0.0 <4.0.0'
 

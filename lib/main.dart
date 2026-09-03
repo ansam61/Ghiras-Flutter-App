@@ -6,8 +6,25 @@ import 'providers/plant_provider.dart';
 import 'providers/app_settings_provider.dart';
 import 'screens/splash_screen.dart';
 
+/// Ghiras Global .NET 10 API Configuration
+class ApiConfig {
+  static const String baseHttpUrl = 'http://localhost:5250/api';
+  static const String baseEmulatorUrl = 'http://10.0.2.2:5250/api';
+  static const String baseHttpsUrl = 'https://localhost:7267/api';
+
+  static const List<String> candidateEndpoints = [
+    '$baseHttpUrl/plants',
+    '$baseEmulatorUrl/plants',
+    '$baseHttpsUrl/plants',
+  ];
+}
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  
+  // Log API connection initialization
+  debugPrint('🌿 [Ghiras AI]: Initializing application with backend API endpoint: ${ApiConfig.baseHttpUrl}');
+
   runApp(
     MultiProvider(
       providers: [
