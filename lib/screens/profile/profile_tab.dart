@@ -31,18 +31,6 @@ class _ProfileTabState extends State<ProfileTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Text(
-                  settings.getText('المفضلة وحسابي', 'Favorites & Profile'),
-                  style: const TextStyle(
-                    color: AppTheme.primaryGreen,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 24),
-
               // User Info Card
               Container(
                 padding: const EdgeInsets.all(20),

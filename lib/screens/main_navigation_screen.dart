@@ -9,6 +9,8 @@ import 'encyclopedia/encyclopedia_tab.dart';
 import 'profile/profile_tab.dart';
 import 'ai_scan/ai_scanner_screen.dart';
 
+import 'add_plant/add_plant_screen.dart';
+
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
 
@@ -55,6 +57,18 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           },
         ),
         actions: [
+          if (_currentIndex == 1)
+            IconButton(
+              icon: const Icon(Icons.add_circle_outline_rounded,
+                  color: AppTheme.primaryGreen, size: 26),
+              tooltip: settings.getText('إضافة نبتة جديدة', 'Add New Plant'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const AddPlantScreen()),
+                );
+              },
+            ),
           IconButton(
             icon: const Icon(Icons.camera_alt_rounded, color: AppTheme.primaryGreen),
             tooltip: settings.getText('ماسح التشخيص', 'AI Scanner'),

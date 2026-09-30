@@ -72,21 +72,6 @@ class _MyPlantsTabState extends State<MyPlantsTab> {
     final settings = Provider.of<AppSettingsProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(settings.getText('حديقتي ونباتاتي', 'My Garden & Plants')),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add_circle_outline_rounded,
-                color: AppTheme.primaryGreen, size: 28),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const AddPlantScreen()),
-              );
-            },
-          ),
-        ],
-      ),
       body: SafeArea(
         child: Consumer<PlantProvider>(
           builder: (context, plantProvider, child) {

@@ -189,18 +189,6 @@ class _EncyclopediaTabState extends State<EncyclopediaTab> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Text(
-                  settings.getText('موسوعة النباتات والأقسام', 'Plant Encyclopedia'),
-                  style: const TextStyle(
-                    color: AppTheme.primaryGreen,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20),
-
               // Search Bar
               Container(
                 decoration: BoxDecoration(
