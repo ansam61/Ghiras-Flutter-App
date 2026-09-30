@@ -36,27 +36,24 @@ class AppSidebar extends StatelessWidget {
             currentAccountPicture: CircleAvatar(
               backgroundColor: Colors.white,
               child: Text(
-                'A',
-                style: TextStyle(
+                settings.userInitial,
+                style: const TextStyle(
                   color: AppTheme.primaryGreen,
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
               ),
             ),
-            accountName: const Text(
-              'eng: ANSAM JAMEEL',
-              style: TextStyle(
+            accountName: Text(
+              settings.userName,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
                 color: Colors.white,
               ),
             ),
             accountEmail: Text(
-              settings.getText(
-                'منصة غراس • ansam@ghiras.com',
-                'Ghiras Platform • ansam@ghiras.com',
-              ),
+              '${settings.getText("منصة غراس", "Ghiras Platform")} • ${settings.userEmail}',
               style: const TextStyle(
                 color: Colors.white70,
                 fontSize: 12,

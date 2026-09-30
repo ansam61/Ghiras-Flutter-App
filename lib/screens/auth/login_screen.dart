@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/app_settings_provider.dart';
 import '../../theme/app_theme.dart';
 import '../main_navigation_screen.dart';
 import 'register_screen.dart';
@@ -16,6 +18,19 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController(text: '123456');
 
   void _login() {
+    final email = _emailController.text.trim();
+    if (email.isNotEmpty) {
+      String name = 'مستخدم غراس';
+      if (email.toLowerCase().contains('ansam')) {
+        name = 'eng: ANSAM JAMEEL';
+      } else {
+        final prefix = email.split('@').first;
+        if (prefix.isNotEmpty) {
+          name = prefix[0].toUpperCase() + prefix.substring(1);
+        }
+      }
+      Provider.of<AppSettingsProvider>(context, listen: false).updateUserInfo(name, email);
+    }
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
     );

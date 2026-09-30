@@ -80,9 +80,9 @@ class _HomeTabState extends State<HomeTab> {
                       CircleAvatar(
                         radius: 22,
                         backgroundColor: AppTheme.primaryGreen,
-                        child: const Text(
-                          'A',
-                          style: TextStyle(
+                        child: Text(
+                          settings.userInitial,
+                          style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -94,16 +94,18 @@ class _HomeTabState extends State<HomeTab> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            settings.getText('مرحباً بك', 'Welcome'),
+                            settings.userName,
                             style: const TextStyle(
                               color: AppTheme.textMuted,
-                              fontSize: 13,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
-                          const Text(
-                            'eng: ANSAM JAMEEL',
-                            style: TextStyle(
-                              fontSize: 15,
+                          const SizedBox(height: 2),
+                          Text(
+                            settings.getText('مرحباً بك 👋', 'Welcome 👋'),
+                            style: const TextStyle(
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),

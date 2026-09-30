@@ -59,9 +59,9 @@ class _ProfileTabState extends State<ProfileTab> {
                     CircleAvatar(
                       radius: 30,
                       backgroundColor: AppTheme.primaryGreen,
-                      child: const Text(
-                        'A',
-                        style: TextStyle(
+                      child: Text(
+                        settings.userInitial,
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -69,26 +69,61 @@ class _ProfileTabState extends State<ProfileTab> {
                       ),
                     ),
                     const SizedBox(width: 16),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'eng: ANSAM JAMEEL',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            settings.userName,
+                            style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          settings.getText('المسؤول الرئيسي • ansam@ghiras.com',
-                              'Administrator • ansam@ghiras.com'),
-                          style: const TextStyle(
-                            color: AppTheme.textMuted,
-                            fontSize: 12,
+                          const SizedBox(height: 4),
+                          Text(
+                            '${settings.getText("المستخدم الحالي", "Active User")} • ${settings.userEmail}',
+                            style: const TextStyle(
+                              color: AppTheme.textMuted,
+                              fontSize: 12,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.edit_rounded, color: AppTheme.primaryGreen, size: 20),
+                      tooltip: settings.getText('تعديل الاسم', 'Edit Name'),
+                      onPressed: () {
+                        final controller = TextEditingController(text: settings.userName);
+                        showDialog(
+                          context: context,
+                          builder: (ctx) => AlertDialog(
+                            title: Text(settings.getText('تعديل اسم المستخدم', 'Edit User Name')),
+                            content: TextField(
+                              controller: controller,
+                              decoration: InputDecoration(
+                                hintText: settings.getText('ادخل الاسم الجديد', 'Enter new name'),
+                              ),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(ctx),
+                                child: Text(settings.getText('إلغاء', 'Cancel')),
+                              ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  if (controller.text.trim().isNotEmpty) {
+                                    settings.updateUserName(controller.text.trim());
+                                  }
+                                  Navigator.pop(ctx);
+                                },
+                                child: Text(settings.getText('حفظ التعديل', 'Save')),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
                     ),
                   ],
                 ),

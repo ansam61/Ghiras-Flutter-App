@@ -31,3 +31,4 @@ C:\Users\ns_.4m\Documents\GhirasProject\ghiras_app\obj\Debug\net10.0\refint\Ghir
 C:\Users\ns_.4m\Documents\GhirasProject\ghiras_app\obj\Debug\net10.0\Ghiras.Mobile.pdb
 C:\Users\ns_.4m\Documents\GhirasProject\ghiras_app\obj\Debug\net10.0\Ghiras.Mobile.genruntimeconfig.cache
 C:\Users\ns_.4m\Documents\GhirasProject\ghiras_app\obj\Debug\net10.0\ref\Ghiras.Mobile.dll
+C:\Users\ns_.4m\Documents\GhirasProject\ghiras_app\obj\Debug\net10.0\Ghiras.Mobile.sourcelink.json

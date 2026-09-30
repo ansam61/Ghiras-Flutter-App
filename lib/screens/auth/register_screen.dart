@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../providers/app_settings_provider.dart';
 import '../../theme/app_theme.dart';
 import '../main_navigation_screen.dart';
 
@@ -15,6 +17,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _passwordController = TextEditingController();
 
   void _register() {
+    final name = _nameController.text.trim();
+    final email = _emailController.text.trim();
+    if (name.isNotEmpty || email.isNotEmpty) {
+      Provider.of<AppSettingsProvider>(context, listen: false).updateUserInfo(
+        name.isEmpty ? 'مستخدم غراس' : name,
+        email.isEmpty ? 'user@ghiras.com' : email,
+      );
+    }
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
       (route) => false,
