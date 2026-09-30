@@ -26,34 +26,8 @@ class ApiService {
       } catch (_) {}
     }
 
-    // Fallback Mock Data matching Adobe XD designs
-    return [
-      Plant(
-        plantId: 1,
-        plantName: 'نبتة البوتس الذهبي',
-        scientificName: 'Epipremnum aureum',
-        categoryId: 1,
-        categoryName: 'نباتات داخلية',
-        careInstructions:
-            'الري عند جفاف التربة السطحية (كل 7 أيام)، وإبعادها عن الشمس المباشرة.',
-      ),
-      Plant(
-        plantId: 2,
-        plantName: 'شجرة الزيتون',
-        scientificName: 'Olea europaea',
-        categoryId: 2,
-        categoryName: 'نباتات خارجية',
-        careInstructions: 'تحتاج إضاءة شمس مباشرة وري معتدل كل 4 أيام.',
-      ),
-      Plant(
-        plantId: 3,
-        plantName: 'صبار الألوفيرا',
-        scientificName: 'Aloe vera',
-        categoryId: 3,
-        categoryName: 'عصاريات وصبار',
-        careInstructions: 'ري خفيف جداً كل 14 يوماً مع ضوء غير مباشر.',
-      ),
-    ];
+    // Fallback empty list if offline
+    return [];
   }
 
   static Future<List<PlantCategory>> getCategories() async {
@@ -72,34 +46,40 @@ class ApiService {
     return [
       PlantCategory(
           categoryId: 1,
-          categoryName: 'نباتات داخلية',
+          categoryName: 'نباتات زينة داخلية',
+          description: 'نباتات مخصصة للزينة الداخلية والمنازل',
           createdAt: DateTime.now(),
-          plantsCount: 12),
+          plantsCount: 0),
       PlantCategory(
           categoryId: 2,
-          categoryName: 'نباتات خارجية',
+          categoryName: 'نباتات ظلية',
+          description: 'نباتات تناسب المساحات المغلقة',
           createdAt: DateTime.now(),
-          plantsCount: 8),
+          plantsCount: 0),
       PlantCategory(
           categoryId: 3,
-          categoryName: 'عصاريات وصبار',
+          categoryName: 'أعشاب ونباتات طبية',
+          description: 'نباتات تُستخدم في الطهي أو التداوي والاستخدامات العطرية',
           createdAt: DateTime.now(),
-          plantsCount: 15),
+          plantsCount: 0),
       PlantCategory(
           categoryId: 4,
-          categoryName: 'طبية وعطرية',
+          categoryName: 'خضروات وفواكه',
+          description: 'نباتات إنتاجية ذات ثمار ونفع غذائي',
           createdAt: DateTime.now(),
-          plantsCount: 6),
+          plantsCount: 0),
       PlantCategory(
           categoryId: 5,
-          categoryName: 'متسلقات وزينة',
+          categoryName: 'عصاريات وصبارات',
+          description: 'نباتات متحملة للجفاف وتحتمل قلة الري',
           createdAt: DateTime.now(),
-          plantsCount: 9),
+          plantsCount: 0),
       PlantCategory(
           categoryId: 6,
-          categoryName: 'أشجار مثمرة',
+          categoryName: 'نباتات مائية',
+          description: 'نباتات تنمو وتعيش في البيئة المائية',
           createdAt: DateTime.now(),
-          plantsCount: 4),
+          plantsCount: 0),
     ];
   }
 
