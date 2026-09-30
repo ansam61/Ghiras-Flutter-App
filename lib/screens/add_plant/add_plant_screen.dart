@@ -174,13 +174,17 @@ class _AddPlantScreenState extends State<AddPlantScreen> {
   String _getCategoryName(int id, AppSettingsProvider settings) {
     switch (id) {
       case 1:
-        return settings.getText('نباتات داخلية', 'Indoor Plants');
+        return settings.getText('نباتات زينة داخلية', 'Indoor Decorative Plants');
       case 2:
-        return settings.getText('نباتات خارجية', 'Outdoor Plants');
+        return settings.getText('نباتات ظلية', 'Shade Plants');
       case 3:
-        return settings.getText('عصاريات وصبار', 'Succulents & Cacti');
+        return settings.getText('أعشاب ونباتات طبية', 'Herbs & Medicinal Plants');
       case 4:
-        return settings.getText('طبية وعطرية', 'Herbs & Aromatics');
+        return settings.getText('خضروات وفواكه', 'Vegetables & Fruits');
+      case 5:
+        return settings.getText('عصاريات وصبارات', 'Succulents & Cacti');
+      case 6:
+        return settings.getText('نباتات مائية', 'Aquatic Plants');
       default:
         return settings.getText('قسم عام', 'General');
     }
@@ -191,10 +195,12 @@ class _AddPlantScreenState extends State<AddPlantScreen> {
     final settings = Provider.of<AppSettingsProvider>(context);
 
     final List<Map<String, dynamic>> categories = [
-      {'id': 1, 'name': settings.getText('نباتات داخلية', 'Indoor Plants')},
-      {'id': 2, 'name': settings.getText('نباتات خارجية', 'Outdoor Plants')},
-      {'id': 3, 'name': settings.getText('عصاريات وصبار', 'Succulents & Cacti')},
-      {'id': 4, 'name': settings.getText('طبية وعطرية', 'Herbs & Aromatics')},
+      {'id': 1, 'name': settings.getText('نباتات زينة داخلية', 'Indoor Decorative Plants')},
+      {'id': 2, 'name': settings.getText('نباتات ظلية', 'Shade Plants')},
+      {'id': 3, 'name': settings.getText('أعشاب ونباتات طبية', 'Herbs & Medicinal Plants')},
+      {'id': 4, 'name': settings.getText('خضروات وفواكه', 'Vegetables & Fruits')},
+      {'id': 5, 'name': settings.getText('عصاريات وصبارات', 'Succulents & Cacti')},
+      {'id': 6, 'name': settings.getText('نباتات مائية', 'Aquatic Plants')},
     ];
 
     return Scaffold(

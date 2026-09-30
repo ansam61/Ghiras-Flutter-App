@@ -158,15 +158,27 @@ class _MyPlantsTabState extends State<MyPlantsTab> {
                               0, settings.getText('الكل', 'All'), plantProvider),
                           _categoryChip(
                               1,
-                              settings.getText('داخلي', 'Indoor'),
+                              settings.getText('زينة داخلية', 'Indoor'),
                               plantProvider),
                           _categoryChip(
                               2,
-                              settings.getText('خارجي', 'Outdoor'),
+                              settings.getText('ظلية', 'Shade'),
                               plantProvider),
                           _categoryChip(
                               3,
-                              settings.getText('عصاريات', 'Succulents'),
+                              settings.getText('أعشاب وطبية', 'Herbs'),
+                              plantProvider),
+                          _categoryChip(
+                              4,
+                              settings.getText('خضروات وفواكه', 'Fruits & Veg'),
+                              plantProvider),
+                          _categoryChip(
+                              5,
+                              settings.getText('عصاريات وصبارات', 'Succulents'),
+                              plantProvider),
+                          _categoryChip(
+                              6,
+                              settings.getText('مائية', 'Aquatic'),
                               plantProvider),
                         ],
                       ),

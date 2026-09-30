@@ -159,27 +159,37 @@ class _EncyclopediaTabState extends State<EncyclopediaTab> {
           categoryId: 0,
           categoryName: settings.getText('الكل', 'All'),
           description: settings.getText('جميع أقسام النباتات', 'All plant categories'),
-          plantsCount: 4),
+          plantsCount: 6),
       PlantCategory(
           categoryId: 1,
-          categoryName: settings.getText('نباتات داخلية', 'Indoor Plants'),
-          description: settings.getText('مناسبة للغرف والمكاتب', 'Suitable for rooms and offices'),
+          categoryName: settings.getText('نباتات زينة داخلية', 'Indoor Decorative'),
+          description: settings.getText('نباتات مخصصة للزينة الداخلية والمنازل', 'Indoor and home decorative plants'),
           plantsCount: 3),
       PlantCategory(
           categoryId: 2,
-          categoryName: settings.getText('نباتات خارجية', 'Outdoor Plants'),
-          description: settings.getText('للحدائق والبلكونات', 'For gardens and balconies'),
-          plantsCount: 1),
+          categoryName: settings.getText('نباتات ظلية', 'Shade Plants'),
+          description: settings.getText('نباتات تناسب المساحات المغلقة', 'Suitable for enclosed spaces'),
+          plantsCount: 2),
       PlantCategory(
           categoryId: 3,
-          categoryName: settings.getText('عصاريات وصبار', 'Succulents & Cacti'),
-          description: settings.getText('تحتمل الجفاف', 'Drought tolerant'),
-          plantsCount: 1),
+          categoryName: settings.getText('أعشاب ونباتات طبية', 'Herbs & Medicinal'),
+          description: settings.getText('نباتات تُستخدم في الطهي أو التداوي والاستخدامات العطرية', 'Used for cooking, medicine or aromatics'),
+          plantsCount: 2),
       PlantCategory(
           categoryId: 4,
-          categoryName: settings.getText('طبية وعطرية', 'Herbs & Aromatics'),
-          description: settings.getText('نعناع ولافندر ورائحة زكية', 'Mint, lavender and fresh scent'),
+          categoryName: settings.getText('خضروات وفواكه', 'Vegetables & Fruits'),
+          description: settings.getText('نباتات إنتاجية ذات ثمار ونفع غذائي', 'Productive plants with fruits and nutrition'),
+          plantsCount: 4),
+      PlantCategory(
+          categoryId: 5,
+          categoryName: settings.getText('عصاريات وصبارات', 'Succulents & Cacti'),
+          description: settings.getText('نباتات متحملة للجفاف وتحتمل قلة الري', 'Drought tolerant and low water requirement'),
           plantsCount: 2),
+      PlantCategory(
+          categoryId: 6,
+          categoryName: settings.getText('نباتات مائية', 'Aquatic Plants'),
+          description: settings.getText('نباتات تنمو وتعيش في البيئة المائية', 'Plants that grow in aquatic environments'),
+          plantsCount: 1),
     ];
 
     return Scaffold(
