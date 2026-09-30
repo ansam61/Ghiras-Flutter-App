@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ghiras.Mobile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49b2b1813b77a8d1369e8c807fc71602adb3c2c8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81cbceb2ec464fbc166a2386a766ac2e056c654a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ghiras.Mobile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ghiras.Mobile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

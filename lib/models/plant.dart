@@ -12,6 +12,7 @@ class Plant {
   final String humidityRequirement;
   final String description;
   final DateTime lastWateredDate;
+  final int? userId;
   final List<PlantImage>? images;
 
   Plant({
@@ -28,6 +29,7 @@ class Plant {
     String? humidityRequirement,
     String? description,
     DateTime? lastWateredDate,
+    this.userId,
     this.images,
   })  : careAdvice = careAdvice ??
             careInstructions ??
@@ -62,6 +64,7 @@ class Plant {
       lastWateredDate: json['lastWateredDate'] != null
           ? DateTime.tryParse(json['lastWateredDate']) ?? DateTime.now()
           : DateTime.now(),
+      userId: json['userId'],
       images: json['images'] != null
           ? (json['images'] as List).map((i) => PlantImage.fromJson(i)).toList()
           : null,
@@ -83,6 +86,7 @@ class Plant {
       'humidityRequirement': humidityRequirement,
       'description': description,
       'lastWateredDate': lastWateredDate.toIso8601String(),
+      if (userId != null) 'userId': userId,
     };
   }
 }

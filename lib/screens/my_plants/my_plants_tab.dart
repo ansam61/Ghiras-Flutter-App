@@ -76,7 +76,7 @@ class _MyPlantsTabState extends State<MyPlantsTab> {
         child: Consumer<PlantProvider>(
           builder: (context, plantProvider, child) {
             return RefreshIndicator(
-              onRefresh: () => plantProvider.fetchPlants(),
+              onRefresh: () => plantProvider.fetchPlants(userId: settings.userId),
               color: AppTheme.primaryGreen,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),

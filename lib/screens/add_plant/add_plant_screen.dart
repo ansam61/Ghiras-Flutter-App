@@ -148,6 +148,7 @@ class _AddPlantScreenState extends State<AddPlantScreen> {
           ? _selectedImageFile!.path
           : 'https://images.unsplash.com/photo-1597055181300-e3633a917c9c',
       lastWateredDate: DateTime.now(),
+      userId: settings.userId,
     );
 
     final success =

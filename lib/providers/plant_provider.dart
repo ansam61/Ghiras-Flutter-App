@@ -66,12 +66,13 @@ class PlantProvider extends ChangeNotifier {
   }
 
   // READ: Fetch Plants from REST API & SQL Server Database
-  Future<void> fetchPlants() async {
+  Future<void> fetchPlants({int? userId}) async {
     _isLoading = true;
     notifyListeners();
 
-    for (final url in _apiEndpoints) {
+    for (final baseUrl in _apiEndpoints) {
       try {
+        final url = userId != null && userId > 0 ? '$baseUrl?userId=$userId' : baseUrl;
         final response = await http
             .get(Uri.parse(url))
             .timeout(const Duration(seconds: 3));
@@ -80,7 +81,7 @@ class PlantProvider extends ChangeNotifier {
           final List<dynamic> data = jsonDecode(response.body);
           _plants = data.map((json) => Plant.fromJson(json)).toList();
           _isLiveApiConnected = true;
-          _workingEndpoint = url;
+          _workingEndpoint = baseUrl;
           break;
         }
       } catch (_) {

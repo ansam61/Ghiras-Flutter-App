@@ -5,6 +5,7 @@ class AppSettingsProvider extends ChangeNotifier {
   bool _isArabic = true;
 
   // Dynamic Logged-in User Profile State
+  int _userId = 1;
   String _userName = 'eng: ANSAM JAMEEL';
   String _userEmail = 'ansam@ghiras.com';
 
@@ -13,6 +14,7 @@ class AppSettingsProvider extends ChangeNotifier {
   bool get isArabic => _isArabic;
   Locale get currentLocale => _isArabic ? const Locale('ar') : const Locale('en');
 
+  int get userId => _userId;
   String get userName => _userName;
   String get userEmail => _userEmail;
 
@@ -52,7 +54,10 @@ class AppSettingsProvider extends ChangeNotifier {
   // Update dynamic user profile upon Login / Register / Profile Edit
   void updateUserInfo(String name, String email) {
     if (name.trim().isNotEmpty) _userName = name.trim();
-    if (email.trim().isNotEmpty) _userEmail = email.trim();
+    if (email.trim().isNotEmpty) {
+      _userEmail = email.trim();
+      _userId = email.toLowerCase().contains('ansam') ? 1 : (email.toLowerCase().hashCode.abs() % 1000 + 2);
+    }
     notifyListeners();
   }
 

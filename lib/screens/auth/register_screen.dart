@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/app_settings_provider.dart';
+import '../../providers/plant_provider.dart';
 import '../../theme/app_theme.dart';
 import '../main_navigation_screen.dart';
 
@@ -20,10 +21,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
     final name = _nameController.text.trim();
     final email = _emailController.text.trim();
     if (name.isNotEmpty || email.isNotEmpty) {
-      Provider.of<AppSettingsProvider>(context, listen: false).updateUserInfo(
+      final settings = Provider.of<AppSettingsProvider>(context, listen: false);
+      settings.updateUserInfo(
         name.isEmpty ? 'مستخدم غراس' : name,
         email.isEmpty ? 'user@ghiras.com' : email,
       );
+      Provider.of<PlantProvider>(context, listen: false).fetchPlants(userId: settings.userId);
     }
     Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(builder: (_) => const MainNavigationScreen()),

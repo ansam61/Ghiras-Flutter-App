@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/app_settings_provider.dart';
+import '../../providers/plant_provider.dart';
 import '../../theme/app_theme.dart';
 import '../main_navigation_screen.dart';
 import 'register_screen.dart';
@@ -29,7 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
           name = prefix[0].toUpperCase() + prefix.substring(1);
         }
       }
-      Provider.of<AppSettingsProvider>(context, listen: false).updateUserInfo(name, email);
+      final settings = Provider.of<AppSettingsProvider>(context, listen: false);
+      settings.updateUserInfo(name, email);
+      Provider.of<PlantProvider>(context, listen: false).fetchPlants(userId: settings.userId);
     }
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
